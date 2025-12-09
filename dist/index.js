@@ -300,11 +300,6 @@ app.all("/mcp", async (req, res) => {
     }
 });
 const port = parseInt(process.env.PORT || "3000", 10);
-app
-    .listen(port, () => {
-    console.log(`✅ Phantombuster MCP server running on http://localhost:${port}/mcp`);
-})
-    .on("error", (error) => {
-    console.error("Server error:", error);
-    process.exit(1);
+app.listen(port, "0.0.0.0", () => {
+    console.log(`✅ Phantombuster MCP server listening on 0.0.0.0:${port}`);
 });
