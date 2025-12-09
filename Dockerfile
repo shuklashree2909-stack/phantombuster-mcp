@@ -19,8 +19,6 @@ RUN npm install --omit=dev
 
 COPY --from=builder /app/dist ./dist
 
-# ✅ REQUIRED FOR RENDER MCP — expose container port
-EXPOSE 10000
 
 USER appuser
 
